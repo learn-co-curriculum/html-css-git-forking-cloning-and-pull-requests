@@ -6,23 +6,25 @@ In this lesson we will learn how to fork, clone, and submit pull requests. These
 
 ## Objectives
 
-1. Forking repositories.
-2. Cloning respositories.
-3. Making pull requests.
+1. Fork repositories
+2. Clone respositories
+3. Make pull requests to repositories 
 
 ## Code Collaboration Through Github
 
 Watch the video below if you are unfamiliar with Git. We will be using Git to access course materials and to share and collaborate on project code throughout this course. After watching the video you may use the text below to review all of the topics discussed in the video.
 
+**Note** that the video uses your computer's terminal, but in this course, you'll be using the Learn IDE and all Git commands will work the same way on it as it does on your terminal.
+
 <iframe width="640" height="360" src="https://www.youtube.com/embed/videoseries?list=PLj148bJp5wiz3q3iuLp6eZrW6Iyjo7t-Y" frameborder="0" allowfullscreen></iframe>
 
 ### What is Cloning?
 
-Cloning is the process of copying a remote repository down to your local filesystem. This could be a copy made from a new repository you make on your own Github account, or it could be an existing repository you come across. THe following instructions differ slightly from the video posted above, but the process and the principles are the same.
+Cloning is the process of copying a remote repository down to your local filesystem. This could be a copy made from a new repository you make on your own Github account, or it could be an existing repository you come across. The following instructions differ slightly from the video posted above, but the process and the principles are the same.
 
 ### Cloning A Repo From Github
 
-To get started open your browser and head to Github.com. Click the `+` plus icon at top right and select new repository. Then name the repository `my-new-project` and click the **Create repository** button. Copy the SSH or HTTP clone url located at the top of the repository page. This step is the same whether it is anew repository or an existing one you wish to copy. Then open Terminal and navigate to the location on your filesystem where you wish the repo to be located. In the video example above I choose my `dev` folder. Note that when you clone a repository it will automatically create a folder for the repo with the same name as the repository. Now we clone by typing the command `git clone <paste in the repo url here>` and press return. Remember that SSH or HTTPS url you copied from the repo on Github? This url is pasted after  the command "git clone " using Command+v on mac or Ctrl+v for pc. Mine looked like this: `git clone git@github.com:jongrover/my-new-project.git`.  This tells git the location of the repository you are cloning and is a crucial step. This should output the following response:
+To get started open your browser and head to Github.com. Click the `+` plus icon at top right and select new repository. Then name the repository `my-new-project` and click the **Create repository** button. Copy the SSH or HTTP clone url located at the top of the repository page. This step is the same whether it is a new repository or an existing one you wish to copy. Then open your Learn IDE, go to the Terminal area and navigate to the location on your filesystem where you wish the repo to be located. In the video example above I choose my `dev` folder but the setup on your IDE will be different. Note that when you clone a repository it will automatically create a folder for the repo with the same name as the repository. Now we clone by typing the command `git clone <paste in the repo url here>` and press return. Remember that SSH or HTTPS url you copied from the repo on Github? This url is pasted after  the command "git clone " using Command+v on mac or Ctrl+v for pc. Mine looked like this: `git clone git@github.com:jongrover/my-new-project.git`.  This tells git the location of the repository you are cloning and is a crucial step. This should output the following response:
 
 ```shell
 Cloning into 'my-new-project'...
@@ -32,7 +34,7 @@ Checking connectivity... done.
 
 If there had been content in the repo you would have seen more details such as the objects it downloaded as well.
 
-Now if we type `ls` to list our files and folder we see that there is a new folder called "my-new-project". Then we can change directory `cd my-new-project` and press return to move into that repo. Now we can continue to work on this repository same as the others before: staging,commiting content, pushing, and pulling to our remote. Once nice thing is that since we cloned this repo it will have all the content the remote did as this is an exact copy. It will have the master branch, as well as any previous commit information that can be seen by typing `git log`. It is also already linked back to our remote "origin". 
+Now if we type `ls` to list our files and folder we see that there is a new folder called "my-new-project". Then we can change directory `cd my-new-project` and press return to move into that repo. Now we can continue to work on this repository in the same way as with the others before: staging, commiting content, pushing, and pulling to our remote. Once nice thing is that since we cloned this repo it will have all the content the remote did as this is an exact copy. It will have the master branch, as well as any previous commit information that can be seen by typing `git log`. It is also already linked back to our remote "origin". 
 
 Cloning is a great way to make a local copy of your own content. If for example you have two computers and you wish to keep your code in sync between the two. It is as easy as creating a remote on your Github account, then cloning from both computers. Then when you are working on computer A you can push up your changes and then on computer B you can pull those changes down (more on pulling coming up in a bit).
 
@@ -40,17 +42,17 @@ Cloning as mentioned is good for making copies of your personal repositories, ho
 
 ### What is Forking?
 
-Forking is the process of making a copy from someone elses remote repo to your own remote repo. So in contrast where cloning is making a copy from remote to local, forking is making a copy from a remote to another remote. You can also think of cloning as a personal action where as forking is much more a social action. Forking is a very common part of the open source code collaboration process. In most cases someone or a group who owns a code repo that is made available for public use, likes to allow other developers to contribute updates to their code. As the owner they want to be able to have the benefit of merging in good code, but preventing ding dongs and nit wits from posting bad code decisions to their repo. Forking allows anyone to copy the code to their own remote and do whatever they want to their copy, keeping the original repo untouched by others. Then collaborators are able to submit pull requests to offer their changes to be merged into the original owners code. We'll talk more about the pull rquest proecess coming up in a bit, but for now let's focus on the first step which is forking!
+Forking is the process of making a copy from someone else's remote repo to your own remote repo. So in contrast where cloning is making a copy from remote to local, forking is making a copy from a remote to another remote. You can also think of cloning as a personal action where as forking is much more a social action. Forking is a very common part of the open source code collaboration process. In most cases someone or a group who owns a code repo that is made available for public use, likes to allow other developers to contribute updates to their code. As the owner they want to be able to have the benefit of merging in good code, but preventing ding dongs and nit wits from posting bad code decisions to their repo. Forking allows anyone to copy the code to their own remote and do whatever they want to their copy, keeping the original repo untouched by others. Then collaborators are able to submit pull requests to offer their changes to be merged into the original owners code. We'll talk more about the pull rquest proecess coming up in a bit, but for now let's focus on the first step which is forking!
 
 ### Forking A Remote Repo On Github
 
 There is a lot of exciting code we can fork on Github. For this example though let's open up our browser paste in the url to visit this repo here: [https://github.com/flatiron-school/fork-me-express-train](https://github.com/flatiron-school/fork-me-express-train). Next, click the Fork button located at the top right just below your Github avatar icon. Up pops a window that asks you to select where you would like to fork this repo to. Go ahead and select your personal profile icon at top left. This makes a copy from "flatiron-school/fork-me-express-train" to your own personal Github "<github-username>/fork-me-express-train". Now we have our own remote copy we can read and write to without damaging the original "flatiron-school" copy we forked from.
 
-Now we woukld like to work on this locally so we need to clone from our forked copy. This process is just the same as we did for the last clone. We copy either the SSH or HTTPS clone url and head back over to Terminal. Navigate to the palce on your computer where you would like this repo to exist. for mine I went into my `dev` folder via `cd dev`. Now type in `git clone <paste-your-clone-url-here>` substituing your own clone url by pasting it in, and then press return. This will clone your remote forked copy down to your local filesystem.
+Now we woukld like to work on this locally so we need to clone from our forked copy. This process is just the same as we did for the last clone. We copy either the SSH or HTTPS clone url and head back over to your Learn IDE and the Terminal area. Navigate, using `cd` to the place on the IDE where you would like this repo to exist.  Now type in `git clone <paste-your-clone-url-here>` substituting your own clone url by pasting it in, and then press return. This will clone your remote forked copy down to your local filesystem.
 
-Next, cd into the repo `cd fork-me-express-train`. Now let's make some changes. Feel free to go into any of the text below the heading "About Trains" and stuff and edit some text. Get creative, it won't hurt anything so type in whatever you like. Let's keep it G rated though please, the Learn.co platform is for all ages. Then save the file, `git add README.md`, `git commit -m "updated train text"`, `git push origin master`. Now we have updated our remote copy.
+Next, cd into the repo `cd fork-me-express-train`. Now let's make some changes. Feel free to go into any of the text below the heading "About Trains" and stuff and edit some text. Get creative; it won't hurt anything so type in whatever you like. Let's keep it G rated though please; the Learn.co platform is for all ages. Then save the file, `git add README.md`, `git commit -m "updated train text"`, `git push origin master`. Now we have updated our remote copy.
 
-Whats left, is to share our updates with the owner of the original "flatiron-school" repo that we forked from. To do so we will make a pull request.
+What's left is to share our updates with the owner of the original "flatiron-school" repo that we forked from. To do so we will make a pull request.
 
 ### Pull Requests
 
