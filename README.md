@@ -14,6 +14,8 @@ In this lesson we will learn how to fork, clone, and submit pull requests. These
 
 Watch the video below if you are unfamiliar with Git. We will be using Git to access course materials and to share and collaborate on project code throughout this course. After watching the video you may use the text below to review all of the topics discussed in the video.
 
+Note that the Github layout presented in the video is not up to date with the latest layout. Refer to the screenshots in the text if you find yourself confused as to where certain things are!
+
 **Note** that the video uses your computer's terminal, but in this course, you'll be using the Learn IDE and all Git commands will work the same way on it as it does on your terminal.
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/videoseries?list=PLj148bJp5wiz3q3iuLp6eZrW6Iyjo7t-Y" frameborder="0" allowfullscreen></iframe>
@@ -24,7 +26,13 @@ Cloning is the process of copying a remote repository down to your local filesys
 
 ### Cloning A Repo From Github
 
-To get started open your browser and head to Github.com. Click the `+` plus icon at top right and select new repository. Then name the repository `my-new-project` and click the **Create repository** button. Copy the SSH or HTTP clone url located at the top of the repository page. This step is the same whether it is a new repository or an existing one you wish to copy. Then open your Learn IDE, go to the Terminal area and navigate to the location on your filesystem where you wish the repo to be located. In the video example above I choose my `dev` folder but the setup on your IDE will be different. Note that when you clone a repository it will automatically create a folder for the repo with the same name as the repository. Now we clone by typing the command `git clone <paste in the repo url here>` and press return. Remember that SSH or HTTPS url you copied from the repo on Github? This url is pasted after  the command "git clone " using Command+v on mac or Ctrl+v for pc. Mine looked like this: `git clone git@github.com:jongrover/my-new-project.git`.  This tells git the location of the repository you are cloning and is a crucial step. This should output the following response:
+To get started open your browser and head to Github.com. Click the `+` plus icon at top right and select new repository. Then name the repository `my-new-project` and click the **Create repository** button. Copy the SSH or HTTP clone url located at the top of the repository page. 
+
+This step is the same whether it is a new repository or an existing one you wish to copy. However, if you're cloning from an existing repository, you'll find the SSH or HTTP clone after you click on the "Clone or Download" button. 
+
+![Cloning](https://s3.amazonaws.com/learn-verified/CloninginGithub.png)
+
+Then open your Learn IDE, go to the Terminal area and navigate to the location on your filesystem where you wish the repo to be located. In the video example above I choose my `dev` folder but the setup on your IDE will be different. Note that when you clone a repository it will automatically create a folder for the repo with the same name as the repository. Now we clone by typing the command `git clone <paste in the repo url here>` and press return. Remember that SSH or HTTPS url you copied from the repo on Github? This url is pasted after  the command "git clone " using Command+v on mac or Ctrl+v for pc. Mine looked like this: `git clone git@github.com:jongrover/my-new-project.git`.  This tells git the location of the repository you are cloning and is a crucial step. This should output the following response:
 
 ```shell
 Cloning into 'my-new-project'...
@@ -58,7 +66,7 @@ What's left is to share our updates with the owner of the original "flatiron-sch
 
 A pull request is simply a comparison from one branch to another that allows the owner of a repository to review the changes between those two branches and decide to merge the branches or close the request without merging. The comparison can be between branches of the same repo or the comparison can be made "across forks" meaning from one remote repository to another. In our case we would like to compare flatiron-school/fork-me-express-train master branch with our &lt;your-github-username&gt;/fork-me-express-train master branch.
 
-First, let's head to our browser and go to your personal copy on Github.com at &lt;your-github-username&gt;/fork-me-express-train. Then click the green button at the top left of the page titled **New pull request**. This will automatically setup a new pull request between your master branch and the master branch that your forked from "flatiron-school"s. On the next screen click the green button **Create pull request** and then click **Create pull request** again. That's it. Now it up to the repository own of "flatiron-school". They will get a notice and check out your changes. If they like it they can merge in your code, otherwise they can start a dialogue with you asking you to make further changes before they accept, or they can simply close the request if they do not want to include those changes.
+First, let's head to our browser and go to your personal copy on Github.com at &lt;your-github-username&gt;/fork-me-express-train. Then click the button at the top left of the page titled **New pull request**. This will automatically setup a new pull request between your master branch and the master branch that your forked from "flatiron-school"s. On the next screen click the green button **Create pull request** and then click **Create pull request** again. That's it. Now it up to the repository own of "flatiron-school". They will get a notice and check out your changes. If they like it they can merge in your code, otherwise they can start a dialogue with you asking you to make further changes before they accept, or they can simply close the request if they do not want to include those changes.
 
 ## Summary
 
