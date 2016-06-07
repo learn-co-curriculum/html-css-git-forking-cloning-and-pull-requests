@@ -7,7 +7,7 @@ In this lesson we will learn how to fork, clone, and submit pull requests. These
 ## Objectives
 
 1. Fork repositories
-2. Clone respositories
+2. Clone repositories
 3. Make pull requests to repositories 
 
 ## Code Collaboration Through Github
